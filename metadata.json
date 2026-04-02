@@ -1,0 +1,5 @@
+{
+  "name": "Cardio_Telereab",
+  "description": "Ferramenta para fisioterapeutas gerarem protocolos de exercícios domiciliares baseados em testes funcionais (TC6M e SL5x).",
+  "requestFramePermissions": []
+}
