@@ -7,7 +7,7 @@ export const EXERCISES: Record<string, Partial<Exercise>> = {
   },
   ESCADAS: {
     name: "Escadas (Degraus Fracionados)",
-    instruction: "Suba e desça 30 degraus de forma fracionada, respeitando seu ritmo.",
+    instruction: "Suba e desça degraus de forma fracionada (ex: 6x de 5 degraus ou 3x de 10 degraus), totalizando 30 degraus por série, respeitando seu ritmo.",
   },
   APOIO_PAREDE: {
     name: "Apoio na Parede (Flexão)",
@@ -78,8 +78,8 @@ export const EXERCISES: Record<string, Partial<Exercise>> = {
     instruction: "Suba e desça de um degrau baixo repetidamente, alternando a perna que inicia o movimento.",
   },
   CICLOERGOMETRO: {
-    name: "Cicloergômetro (Bicicleta)",
-    instruction: "Pedale com carga leve a moderada, mantendo postura ereta. Ideal para quem tem déficit de equilíbrio.",
+    name: "Cicloergômetro ou Marcha Estacionária",
+    instruction: "Pedale com carga leve a moderada. Caso não possua bicicleta, realize Marcha Estacionária (caminhar sem sair do lugar elevando joelhos) pelo mesmo tempo.",
   },
   CAMINHADA_INTERMITENTE_DAOP: {
     name: "Caminhada Intermitente (Protocolo DAOP)",
@@ -88,6 +88,18 @@ export const EXERCISES: Record<string, Partial<Exercise>> = {
   TAI_CHI_ADAPTADO: {
     name: "Tai Chi Adaptado (Estabilidade)",
     instruction: "Realize movimentos lentos e fluidos, focando na transferência de peso entre as pernas e respiração profunda.",
+  },
+  AGACHAMENTO_RAPIDO: {
+    name: "Agachamento Rápido (HIIT)",
+    instruction: "Realize o agachamento de forma rápida e controlada, mantendo a postura.",
+  },
+  MARCHA_JOELHOS_ALTOS: {
+    name: "Marcha com Elevação de Joelhos",
+    instruction: "Marcha estacionária elevando os joelhos o máximo possível em ritmo acelerado.",
+  },
+  STEP_LATERAL: {
+    name: "Step Lateral (HIIT)",
+    instruction: "Dê passos laterais rápidos sobre um degrau baixo ou marcação no chão.",
   },
 };
 

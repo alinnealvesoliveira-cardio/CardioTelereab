@@ -8,17 +8,20 @@ export type BetaBlockerStatus = 'none' | 'suspended' | 'active';
 
 export interface PatientData {
   name: string;
+  birthDate?: string;
   tc6m?: number;
-  tc6mMaxHR?: number;
   sl5x: number;
   cycle: string;
   age: number;
   sex: 'M' | 'F';
   weight: number;
   height: number;
+  imc?: number;
   restingHR: number;
-  maxHR?: number;
+  fcMaxMedida?: number;
+  fcMaxTC6M?: number;
   betaBlockerStatus: BetaBlockerStatus;
+  hasNoHRMonitor: boolean;
   // Clinical Conditions
   isHFrEF: boolean; // IC FER
   isHFpEF: boolean; // IC FEP
@@ -32,6 +35,11 @@ export interface PatientData {
   hasAngina: boolean;
   isDiabetic: boolean;
   useIntervalTraining: boolean;
+  includeDiabeticHIIT: boolean;
+  includeUnifiedHIIT: boolean;
+  includeDAOPProtocol: boolean;
+  evolveWorkout: boolean;
+  therapistPhone?: string;
 }
 
 export interface ClinicalMetrics {
@@ -42,6 +50,11 @@ export interface ClinicalMetrics {
   mcidTarget: string;
   lin: number; // Lower Limit of Normal
   mdc: number; // Minimal Detectable Change
+  sl5xInterpretation?: string;
+  fallRisk?: string;
+  vo2Burr?: number;
+  vo2Cahalin?: number;
+  isHeartFailure?: boolean;
 }
 
 export interface Exercise {
@@ -96,5 +109,89 @@ export interface Protocol {
     safetyConsiderations: string[];
     comparison: string;
     recommendation: string;
+  };
+  unifiedHIIT?: {
+    progression: {
+      phase1: string;
+      phase2: string;
+      phase3: string;
+    };
+    hiitAdapted: {
+      title: string;
+      warmup: string;
+      mainPhase: string;
+      cooldown: string;
+      frequency: string;
+      totalDuration: string;
+      exercises: {
+        name: string;
+        instruction: string;
+      }[];
+    };
+    absoluteContraindications: string[];
+    relativeContraindications: string[];
+    selectionCriteria: {
+      criterion: string;
+      requirement: string;
+      justification: string;
+    }[];
+    riskStratification: {
+      low: string[];
+      moderate: string[];
+      high: string[];
+    };
+  };
+  daopProtocol?: {
+    standardSET: {
+      component: string;
+      recommendation: string;
+    }[];
+    guidelines: string[];
+    homeProgram: {
+      description: string;
+      features: string[];
+      evidence: string;
+    };
+    diabeticConsiderations: string;
+    contraindications: {
+      absolute: string[];
+      relative: string[];
+    };
+    comparison: string;
+    teleSET?: {
+      fase1: string[];
+      fase2: {
+        parametro: string;
+        semanas1_4: string;
+        semanas5_8: string;
+        semanas9_12: string;
+        ref: string;
+      }[];
+      fase3: string[];
+      escalaDor: {
+        nivel: string;
+        descricao: string;
+        orientacao: string;
+      }[];
+    };
+  };
+  diabeticHFpEF?: {
+    evidence: string;
+    optimExStudy: {
+      modality: string;
+      protocol: string;
+      intensity: string;
+      frequency: string;
+      result: string;
+    }[];
+    recommendedProtocols: {
+      title: string;
+      warmup: string;
+      main: string;
+      frequency: string;
+      progression?: string;
+    }[];
+    considerations: string[];
+    practicalExample: string;
   };
 }
